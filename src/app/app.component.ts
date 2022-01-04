@@ -88,32 +88,56 @@ export class AppComponent {
     this.images.push("thai2.jpg");
   }
   checkImage(val: string) {
+    let image= document.getElementById("imgSlide");
 
     if (this.flagc.includes(val)) {
+      debugger;
+     image?.classList.add("playbottomleft");
       let value=this.flagc;
-      this.flagc = this.currentImage;
+     
       setTimeout(() => {
-        this.flagc=value;
+        image?.classList.remove("playbottomleft");
+        this.flagc = this.currentImage;
+        setTimeout(() => {
+        
+          this.flagc=value;
+          
+        }, 500);
       }, 2000);
     } else if (this.flagj.includes(val)) {
       let value=this.flagj;
-      this.flagj = this.currentImage;
+      
+      image?.classList.add("playbottomright");
       setTimeout(() => {
-        this.flagj=value;
+        this.flagj = this.currentImage;
+        image?.classList.remove("playbottomright");
+        setTimeout(() => {
+          this.flagj=value;
+        }, 500);
       }, 2000);
     }
     else if (this.flagk.includes(val)) {
       let value=this.flagk;
-      this.flagk = this.currentImage;
+      image?.classList.add("playtopleft");
       setTimeout(() => {
-        this.flagk=value;
+        this.flagk = this.currentImage;
+        image?.classList.remove("playtopleft");
+
+        setTimeout(() => {
+          this.flagk=value;
+        }, 500);
       }, 2000);
     }
     else if (this.flagt.includes(val)) {
       let value=this.flagt;
-      this.flagt = this.currentImage;
+      image?.classList.add("playtopright");
+
       setTimeout(() => {
-        this.flagt=value;
+        this.flagt = this.currentImage;
+        image?.classList.remove("playtopright");
+        setTimeout(() => {
+          this.flagt=value;
+        }, 500);
       }, 2000);
     }
   }

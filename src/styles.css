@@ -54,9 +54,33 @@ transition: all .3s ease-in-out;
     bottom:0%;
     animation: slidedown 3s;
   }
+.playtopleft{
+    top:0%;
+    animation: slideleft 3s;
+} 
+.playtopright{
+    top:0%;
+    animation: slideright 3s;
+} 
+.playbottomleft{
+    bottom:0%;
+    animation: slideleft 3s;
+} 
+.playbottomright{
+    bottom:0%;
+    animation: slideright 3s;
+} 
   @keyframes slidedown {
     0%   {bottom: 100%;}
     100% {bottom: 0%;}
+  }
+  @keyframes slideright {
+    0%   {left: 0%;}
+    100% {left: 90%;}
+  }
+  @keyframes slideleft {
+    0%   {right: 0%;}
+    100% {right: 90%;}
   }
   .unplay{
     bottom: 0%;
